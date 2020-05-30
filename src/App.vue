@@ -1,9 +1,10 @@
 <template>
   <v-app>
-    <main>
+    <main :class="{'orange-green': themeSwitched}"></main>
       <div class="app-container">
         <header class="app-header dark-brown">
           <h1>My Pet Store</h1>
+          <v-btn @click="themeSwitched = !themeSwitched">Switch theme</v-btn>
         </header>
         <div class="wrapper">
           <div class="panel tall-panel light-mint">
@@ -60,12 +61,12 @@
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-
 export default {
   name: "App",
-  components: {
-    HelloWorld
+  data() {
+    return {
+      themeSwitched: false
+    };
   }
 };
 </script>
